@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GridMovement"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Woot Woot" Height="480" Width="600
+        ">
+    <Window.Background>
+        <ImageBrush/>
+    </Window.Background>
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="107*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="image" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="357" VerticalAlignment="Top" Width="592" Source="Grid.png" Stretch="UniformToFill"/>
+        <Rectangle x:Name="rec_WhiteBar" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="99" Margin="0,350,0,0" Stroke="Black" VerticalAlignment="Top" Width="592" Grid.ColumnSpan="2"/>
+        <Button x:Name="bt_Up" HorizontalAlignment="Left" Margin="85,357,0,0" VerticalAlignment="Top" Width="75" Height="20" Content="Up" RenderTransformOrigin="0.613,-0.8" Click="bt_Up_Click"/>
+        <Button x:Name="bt_Right" Content="Right" HorizontalAlignment="Left" Margin="0,382,0,0" VerticalAlignment="Top" Width="75" Click="bt_Right_Click" Grid.Column="1"/>
+        <Button x:Name="bt_Left" Content="Left" HorizontalAlignment="Left" Margin="6,387,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.488,-0.749" Click="bt_Left_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.988"/>
+                    <TranslateTransform X="0.427" Y="-0.014"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="bt_Down" HorizontalAlignment="Left" Margin="85,412,0,0" VerticalAlignment="Top" Width="75" Height="20" Content="Down" Click="bt_Down_Click"/>
+        <Image x:Name="img_Player" Height="50" VerticalAlignment="Top" Source="Player.png" Stretch="Fill" Margin="65,62,49,0">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="Grid.png" Stretch="None"/>
+            </Image.OpacityMask>
+        </Image>
     </Grid>
 </Window>
